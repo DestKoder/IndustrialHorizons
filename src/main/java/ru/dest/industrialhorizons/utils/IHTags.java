@@ -26,6 +26,7 @@ public class IHTags {
 //        public static final Tags.IOptionalNamedTag<Item> AMETHYST = createForgeTag("gems/amethyst");
         public static final Tags.IOptionalNamedTag<Item> CPU = createTag("cpu");
         public static final Tags.IOptionalNamedTag<Item> CM = createTag("cm");
+        public static final Tags.IOptionalNamedTag<Item> CP = createTag("cp");
 
 
         private static Tags.IOptionalNamedTag<Item> createTag(String name) {

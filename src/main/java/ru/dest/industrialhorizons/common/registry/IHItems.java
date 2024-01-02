@@ -28,6 +28,11 @@ public class IHItems {
     public static final RegistryObject<Item> CM_T4 = ITEMS.register("cm_t4", ()-> new SimpleItem(64));
     public static final RegistryObject<Item> CM_T5 = ITEMS.register("cm_t5", ()-> new SimpleItem(64));
     public static final RegistryObject<Item> CAPASITOR = ITEMS.register("capasitor", ()-> new SimpleItem(64));
+    public static final RegistryObject<Item> CP_T1 = ITEMS.register("cp_t1", ()-> new SimpleItem(64));
+    public static final RegistryObject<Item> CP_T2 = ITEMS.register("cp_t2", ()-> new SimpleItem(64));
+    public static final RegistryObject<Item> CP_T3 = ITEMS.register("cp_t3", ()-> new SimpleItem(64));
+    public static final RegistryObject<Item> CP_T4 = ITEMS.register("cp_t4", ()-> new SimpleItem(64));
+    public static final RegistryObject<Item> CP_T5 = ITEMS.register("cp_t5", ()-> new SimpleItem(64));
 
 
 

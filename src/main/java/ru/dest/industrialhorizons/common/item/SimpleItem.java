@@ -9,7 +9,7 @@ import java.util.function.Function;
 public class SimpleItem extends Item {
 
     public SimpleItem(int stackSize) {
-        super(new Properties().stacksTo(stackSize));
+        super(new Properties().stacksTo(stackSize).tab(IndustrialHorizons.GROUP));
     }
 
     public SimpleItem(int stackSize, @NotNull Function<Properties, Properties> func){
