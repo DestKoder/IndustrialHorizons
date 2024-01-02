@@ -132,9 +132,9 @@ dependencies {
     // compile "some.group:artifact:version"
 
     // compile against the JEI API but do not include it at runtime
-    compileOnly fg.deobf("mezz.jei:jei-1.16.5:7.7.1.153:api")
+    compileOnly fg.deobf("mezz.jei:jei-1.16.5:7.7.1.121:api")
     // at runtime, use the full JEI jar
-    //runtimeOnly fg.deobf("mezz.jei:jei-1.16.5:7.7.1.153")
+    runtimeOnly fg.deobf("mezz.jei:jei-1.16.5:7.7.1.121")
 
     // Real examples
     // compile 'com.mod-buildcraft:buildcraft:6.0.8:dev'  // adds buildcraft to the dev env

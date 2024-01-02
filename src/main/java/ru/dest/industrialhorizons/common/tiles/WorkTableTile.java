@@ -4,6 +4,7 @@ import net.minecraft.item.Item;
 import net.minecraft.tileentity.TileEntityType;
 import ru.dest.industrialhorizons.common.registry.IHItems;
 import ru.dest.industrialhorizons.common.registry.IHTileEntities;
+import ru.dest.industrialhorizons.utils.IHTags;
 
 import java.util.List;
 
@@ -29,7 +30,7 @@ public class WorkTableTile extends BaseMachineTile {
         if(slot == 0)return list(IHItems.SOLDERER.get());
         if(slot == 1)return list(IHItems.SOLDER.get());
         if(slot == 2)return list(IHItems.BURNER.get());
-        if(slot == 5)return list(IHItems.CPU_T1.get(), IHItems.CPU_T2.get(), IHItems.CPU_T3.get(), IHItems.CPU_T4.get(), IHItems.CPU_T5.get());
+        if(slot == 5)return IHTags.Items.CPU.getValues();
         return list();
     }
 

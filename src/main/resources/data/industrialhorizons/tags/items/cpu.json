@@ -1,0 +1,10 @@
+{
+  "replace": false,
+  "values": [
+    "industrialhorizons:cpu_t1",
+    "industrialhorizons:cpu_t2",
+    "industrialhorizons:cpu_t3",
+    "industrialhorizons:cpu_t4",
+    "industrialhorizons:cpu_t5"
+  ]
+}
