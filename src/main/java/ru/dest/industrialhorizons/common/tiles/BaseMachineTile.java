@@ -18,12 +18,12 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
-public abstract class FactoryTile extends TileEntity {
+public abstract class BaseMachineTile extends TileEntity {
 
     private final ItemStackHandler itemHandler = createHandler();
     private final LazyOptional<IItemHandler> handler = LazyOptional.of(()-> itemHandler);
 
-    public FactoryTile(TileEntityType<?> tileEntityTypeIn) {
+    public BaseMachineTile(TileEntityType<?> tileEntityTypeIn) {
         super(tileEntityTypeIn);
     }
 

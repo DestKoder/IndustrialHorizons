@@ -9,7 +9,7 @@ import java.util.List;
 
 import static ru.dest.industrialhorizons.utils.Utils.list;
 
-public class WorkTableTile extends FactoryTile{
+public class WorkTableTile extends BaseMachineTile {
 
     public WorkTableTile(TileEntityType<?> tileEntityTypeIn) {
         super(tileEntityTypeIn);

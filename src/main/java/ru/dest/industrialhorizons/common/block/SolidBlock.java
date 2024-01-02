@@ -8,13 +8,13 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.function.Function;
 
-public class SimpleBlock extends Block {
+public class SolidBlock extends Block {
 
-    public SimpleBlock(Material m, int harvestLevel, ToolType tool, float hardness) {
+    public SolidBlock(Material m, int harvestLevel, ToolType tool, float hardness) {
         super(AbstractBlock.Properties.of(m).harvestLevel(harvestLevel).harvestTool(tool).requiresCorrectToolForDrops().strength(hardness));
     }
 
-    public SimpleBlock(Material m, int harvestLevel, ToolType tool, float hardness, @NotNull Function<Properties, Properties> func){
+    public SolidBlock(Material m, int harvestLevel, ToolType tool, float hardness, @NotNull Function<Properties, Properties> func){
         super(func.apply(AbstractBlock.Properties.of(m).harvestLevel(harvestLevel).harvestTool(tool).requiresCorrectToolForDrops().strength(hardness)));
     }
 
