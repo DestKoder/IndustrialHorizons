@@ -27,6 +27,9 @@ public class WorkTableTile extends BaseMachineTile {
     @Override
     protected List<Item> getValidItemsPerSlot(int slot) {
         if(slot == 0)return list(IHItems.SOLDERER.get());
+        if(slot == 1)return list(IHItems.SOLDER.get());
+        if(slot == 2)return list(IHItems.BURNER.get());
+        if(slot == 5)return list(IHItems.CPU.get());
         return list();
     }
 

@@ -14,6 +14,9 @@ public class IHItems {
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, IndustrialHorizons.MOD_ID);
 
     public static final RegistryObject<Item> SOLDERER = ITEMS.register("solderer", ()-> new SimpleItem(1));
+    public static final RegistryObject<Item> SOLDER = ITEMS.register("solder", ()-> new SimpleItem(64));
+    public static final RegistryObject<Item> BURNER = ITEMS.register("burner", ()-> new SimpleItem(1));
+    public static final RegistryObject<Item> CPU = ITEMS.register("cpu", ()-> new SimpleItem(64));
 
     public static void init(IEventBus eventBus){
         ITEMS.register(eventBus);
