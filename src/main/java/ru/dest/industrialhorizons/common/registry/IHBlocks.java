@@ -27,7 +27,7 @@ public class IHBlocks {
     }
 
     private static <T extends Block> void regBlockItem(String name, RegistryObject<T> block){
-        IHItems.ITEMS.register(name, () -> new BlockItem(block.get(), new Item.Properties()));
+        IHItems.ITEMS.register(name, () -> new BlockItem(block.get(), new Item.Properties().tab(IndustrialHorizons.GROUP).stacksTo(64)));
     }
 
     public static void init(IEventBus eventBus){

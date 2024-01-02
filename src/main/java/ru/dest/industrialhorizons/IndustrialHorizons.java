@@ -3,6 +3,8 @@ package ru.dest.industrialhorizons;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.client.gui.ScreenManager;
+import net.minecraft.item.ItemGroup;
+import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -31,8 +33,18 @@ import java.util.stream.Collectors;
 public class IndustrialHorizons
 {
     public static final String MOD_ID = "industrialhorizons";
+
+    public static final ItemGroup GROUP = new ItemGroup(MOD_ID) {
+        @Override
+        public ItemStack makeIcon() {
+            return new ItemStack(IHItems.SOLDERER.get());
+        }
+    };
+
     // Directly reference a log4j logger.
     private static final Logger LOGGER = LogManager.getLogger();
+
+
 
     public IndustrialHorizons() {
         IEventBus events = FMLJavaModLoadingContext.get().getModEventBus();

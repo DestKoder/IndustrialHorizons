@@ -1,5 +1,23 @@
 {
   "block.industrialhorizons.work_table": "Work Table",
-  "tile.industrialhorzions.work_table": "Work Table",
-  "screen.industrialhorizons.work_table": "Work Table"
+  "tile.industrialhorizons.work_table": "Work Table",
+  "screen.industrialhorizons.work_table": "Work Table",
+
+  "itemGroup.industrialhorizons": "Industrial Horizons",
+
+  "item.industrialhorizons.solderer": "Solderer",
+  "item.industrialhorizons.solder": "Solder",
+  "item.industrialhorizons.burner": "Burner",
+
+  "item.industrialhorizons.cpu_t1": "CPU T1",
+  "item.industrialhorizons.cpu_t2": "CPU T2",
+  "item.industrialhorizons.cpu_t3": "CPU T3",
+  "item.industrialhorizons.cpu_t4": "CPU T4",
+  "item.industrialhorizons.cpu_t5": "CPU T5",
+
+  "item.industrialhorizons.cm_t1": "CM T1",
+  "item.industrialhorizons.cm_t2": "CM T2",
+  "item.industrialhorizons.cm_t3": "CM T3",
+  "item.industrialhorizons.cm_t4": "CM T4",
+  "item.industrialhorizons.cm_t5": "CM T5"
 }
