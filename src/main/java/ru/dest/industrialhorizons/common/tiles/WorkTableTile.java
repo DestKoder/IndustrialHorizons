@@ -33,6 +33,7 @@ public class WorkTableTile extends BaseMachineTile {
         if(slot == 5)return IHTags.Items.CPU.getValues();
         if(slot == 7)return IHTags.Items.CM.getValues();
         if(slot == 6)return list(IHItems.CAPASITOR.get());
+        if(slot == 8)return IHTags.Items.CP.getValues();
         return list();
     }
 
