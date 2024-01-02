@@ -16,7 +16,11 @@ public class IHItems {
     public static final RegistryObject<Item> SOLDERER = ITEMS.register("solderer", ()-> new SimpleItem(1));
     public static final RegistryObject<Item> SOLDER = ITEMS.register("solder", ()-> new SimpleItem(64));
     public static final RegistryObject<Item> BURNER = ITEMS.register("burner", ()-> new SimpleItem(1));
-    public static final RegistryObject<Item> CPU = ITEMS.register("cpu", ()-> new SimpleItem(64));
+    public static final RegistryObject<Item> CPU_T1 = ITEMS.register("cpu_t1", ()-> new SimpleItem(64));
+    public static final RegistryObject<Item> CPU_T2 = ITEMS.register("cpu_t2", ()-> new SimpleItem(64));
+    public static final RegistryObject<Item> CPU_T3 = ITEMS.register("cpu_t3", ()-> new SimpleItem(64));
+    public static final RegistryObject<Item> CPU_T4 = ITEMS.register("cpu_t4", ()-> new SimpleItem(64));
+    public static final RegistryObject<Item> CPU_T5 = ITEMS.register("cpu_t5", ()-> new SimpleItem(64));
 
     public static void init(IEventBus eventBus){
         ITEMS.register(eventBus);

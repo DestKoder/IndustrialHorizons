@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "industrialhorizons:item/cpu"
+    "layer0": "industrialhorizons:item/cpu/cpu_t1"
   }
 }
