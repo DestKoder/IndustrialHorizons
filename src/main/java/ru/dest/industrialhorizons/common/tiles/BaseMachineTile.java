@@ -20,8 +20,8 @@ import java.util.List;
 
 public abstract class BaseMachineTile extends TileEntity {
 
-    private final ItemStackHandler itemHandler = createHandler();
-    private final LazyOptional<IItemHandler> handler = LazyOptional.of(()-> itemHandler);
+    protected final ItemStackHandler itemHandler = createHandler();
+    protected final LazyOptional<IItemHandler> handler = LazyOptional.of(()-> itemHandler);
 
     public BaseMachineTile(TileEntityType<?> tileEntityTypeIn) {
         super(tileEntityTypeIn);
@@ -34,7 +34,7 @@ public abstract class BaseMachineTile extends TileEntity {
     }
 
     @Override
-    public @NotNull CompoundNBT   save(@NotNull CompoundNBT nbt) {
+    public @NotNull CompoundNBT save(@NotNull CompoundNBT nbt) {
         nbt.put("inv", itemHandler.serializeNBT());
         return super.save(nbt);
     }
@@ -42,6 +42,15 @@ public abstract class BaseMachineTile extends TileEntity {
     @Contract(" -> new")
     private @NotNull ItemStackHandler createHandler(){
         return new ItemStackHandler(getSlots()){
+
+            @NotNull
+            @Override
+            public ItemStack extractItem(int slot, int amount, boolean simulate) {
+                if(onItemTake(slot, amount) == ItemActionResult.SUCCESS){
+                    return super.extractItem(slot, amount, simulate);
+                }else return ItemStack.EMPTY;
+            }
+
             @Override
             public boolean isItemValid(int slot, @NotNull ItemStack stack) {
                 List<Item> valid = getValidItemsPerSlot(slot);
@@ -51,6 +60,14 @@ public abstract class BaseMachineTile extends TileEntity {
             @Override
             public int getSlotLimit(int slot) {
                 return getSlotMaxStackSize(slot);
+            }
+
+            @NotNull
+            @Override
+            public ItemStack insertItem(int slot, @NotNull ItemStack stack, boolean simulate) {
+                if(onItemPlace(slot, stack) == ItemActionResult.SUCCESS){
+                    return super.insertItem(slot, stack, simulate);
+                }else return stack;
             }
         };
     }
@@ -70,5 +87,17 @@ public abstract class BaseMachineTile extends TileEntity {
 
     protected int getSlotMaxStackSize(int slot){
         return 64;
+    }
+
+    protected ItemActionResult onItemPlace(int slot, ItemStack item){
+        return ItemActionResult.SUCCESS;
+    }
+
+    protected ItemActionResult onItemTake(int slot, int amount) {
+        return  ItemActionResult.SUCCESS;
+    }
+
+    protected enum ItemActionResult {
+        SUCCESS, DENY
     }
 }

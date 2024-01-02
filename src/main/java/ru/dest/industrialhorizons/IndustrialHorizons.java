@@ -21,10 +21,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import ru.dest.industrialhorizons.client.screen.WorkTableScreen;
-import ru.dest.industrialhorizons.common.registry.IHBlocks;
-import ru.dest.industrialhorizons.common.registry.IHContainers;
-import ru.dest.industrialhorizons.common.registry.IHItems;
-import ru.dest.industrialhorizons.common.registry.IHTileEntities;
+import ru.dest.industrialhorizons.common.registry.*;
 
 import java.util.stream.Collectors;
 
@@ -61,6 +58,7 @@ public class IndustrialHorizons
         IHBlocks.init(events);
         IHTileEntities.init(events);
         IHContainers.init(events);
+        IHRecipes.init(events);
     }
 
     private void setup(final FMLCommonSetupEvent event)

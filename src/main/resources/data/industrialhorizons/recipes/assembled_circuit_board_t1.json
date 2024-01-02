@@ -1,0 +1,20 @@
+{
+  "type": "industrialhorizons:circuit_assembly",
+  "ingredients": [
+    {
+      "item": "industrialhorizons:cpu_t1"
+    },
+    {
+      "item": "industrialhorizons:cp_t1"
+    },
+    {
+      "item": "industrialhorizons:cm_t1"
+    },
+    {
+      "item": "industrialhorizons:capasitor"
+    }
+  ],
+  "output": {
+    "item": "industrialhorizons:assembled_circuit_board_t1"
+  }
+}
