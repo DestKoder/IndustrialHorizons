@@ -37,13 +37,6 @@ public class IHItems {
     public static final RegistryObject<Item> CP_T3 = ITEMS.register("cp_t3", ()-> new SimpleItem(64));
     public static final RegistryObject<Item> CP_T4 = ITEMS.register("cp_t4", ()-> new SimpleItem(64));
     public static final RegistryObject<Item> CP_T5 = ITEMS.register("cp_t5", ()-> new SimpleItem(64));
-    public static final RegistryObject<Item> ACB_T1 = ITEMS.register("acb_t1", ()-> new SimpleItem(64));
-    public static final RegistryObject<Item> ACB_T2 = ITEMS.register("acb_t2", ()-> new SimpleItem(64));
-    public static final RegistryObject<Item> ACB_T3 = ITEMS.register("acb_t3", ()-> new SimpleItem(64));
-    public static final RegistryObject<Item> ACB_T4 = ITEMS.register("acb_t4", ()-> new SimpleItem(64));
-    public static final RegistryObject<Item> ACB_T5 = ITEMS.register("acb_t5", ()-> new SimpleItem(64));
-    public static final RegistryObject<Item> CB = ITEMS.register("circuit_board", ()-> new SimpleItem(64));
-    public static final RegistryObject<Item> ECB = ITEMS.register("ecb", ()-> new SimpleItem(64));
 
     public static final RegistryObject<Item> CIRCUIT_BOARD = ITEMS.register("circuit_board", ()-> new SimpleItem(64));
     public static final RegistryObject<Item> ETCHED_CIRCUIT_BOARD = ITEMS.register("etched_circuit_board", () -> new SimpleItem(64));
