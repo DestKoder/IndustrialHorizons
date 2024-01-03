@@ -17,6 +17,8 @@ import org.jetbrains.annotations.Nullable;
 import ru.dest.industrialhorizons.IndustrialHorizons;
 import ru.dest.industrialhorizons.common.registry.IHRecipes;
 
+import java.util.Arrays;
+
 public class CircuitAssemblyRecipe implements IRecipe<IInventory> {
 
     public static final ResourceLocation TYPE_ID = new ResourceLocation(IndustrialHorizons.MOD_ID, "circuit_assembly");
@@ -35,7 +37,22 @@ public class CircuitAssemblyRecipe implements IRecipe<IInventory> {
 
     @Override
     public boolean matches(@NotNull IInventory inv, World world) {
-        return !inv.getItem(3).equals(ItemStack.EMPTY) && ingredients.get(0).test(inv.getItem(5)) && ingredients.get(1).test(inv.getItem(6)) && ingredients.get(2).test(inv.getItem(7)) && ingredients.get(3).test(inv.getItem(8));
+        if(inv.getContainerSize() < 5) {
+            System.out.println("Not enough container size");
+            return false;
+        }
+
+        for(int i = 0; i < 5; i ++){
+            if(inv.getItem(i).isEmpty()) {
+                System.out.println("Empty item in slot " + i);
+                return false;
+            }
+        }
+
+        return ingredients.get(0).test(inv.getItem(1))
+                && ingredients.get(1).test(inv.getItem(2))
+                && ingredients.get(2).test(inv.getItem(3))
+                && ingredients.get(3).test(inv.getItem(4));
     }
 
     @Override

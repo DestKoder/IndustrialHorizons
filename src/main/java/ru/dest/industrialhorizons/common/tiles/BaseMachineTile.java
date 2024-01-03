@@ -4,9 +4,11 @@ import net.minecraft.block.BlockState;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.tileentity.ITickableTileEntity;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.tileentity.TileEntityType;
 import net.minecraft.util.Direction;
+import net.minecraft.world.World;
 import net.minecraftforge.common.capabilities.Capability;
 import net.minecraftforge.common.util.LazyOptional;
 import net.minecraftforge.items.CapabilityItemHandler;
@@ -16,6 +18,7 @@ import org.jetbrains.annotations.Contract;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public abstract class BaseMachineTile extends TileEntity {
@@ -23,8 +26,11 @@ public abstract class BaseMachineTile extends TileEntity {
     protected final ItemStackHandler itemHandler = createHandler();
     protected final LazyOptional<IItemHandler> handler = LazyOptional.of(()-> itemHandler);
 
+    protected final List<Integer> outputSlots;
+
     public BaseMachineTile(TileEntityType<?> tileEntityTypeIn) {
         super(tileEntityTypeIn);
+        outputSlots = new ArrayList<>();
     }
 
     @Override
@@ -54,7 +60,10 @@ public abstract class BaseMachineTile extends TileEntity {
             @Override
             public boolean isItemValid(int slot, @NotNull ItemStack stack) {
                 List<Item> valid = getValidItemsPerSlot(slot);
-                return valid != null && !valid.isEmpty() && valid.contains(stack.getItem());
+
+                if(valid == null || valid.isEmpty()) return true;
+
+                return valid.contains(stack.getItem());
             }
 
             @Override
@@ -65,6 +74,9 @@ public abstract class BaseMachineTile extends TileEntity {
             @NotNull
             @Override
             public ItemStack insertItem(int slot, @NotNull ItemStack stack, boolean simulate) {
+                if(outputSlots.contains(slot)){
+                    return stack;
+                }
                 if(onItemPlace(slot, stack) == ItemActionResult.SUCCESS){
                     return super.insertItem(slot, stack, simulate);
                 }else return stack;
@@ -80,6 +92,7 @@ public abstract class BaseMachineTile extends TileEntity {
         }
 
         return super.getCapability(cap, side);
+
     }
 
     protected abstract int getSlots();

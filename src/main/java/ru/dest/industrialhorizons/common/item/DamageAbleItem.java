@@ -1,5 +1,6 @@
 package ru.dest.industrialhorizons.common.item;
 
+import net.minecraft.item.ItemStack;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.function.Function;
