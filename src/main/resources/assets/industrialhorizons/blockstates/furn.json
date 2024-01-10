@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "industrialhorizons:block/furn",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "industrialhorizons:block/furn"
+    },
+    "facing=south": {
+      "model": "industrialhorizons:block/furn",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "industrialhorizons:block/furn",
+      "y": 270
+    }
+  }
+}

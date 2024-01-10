@@ -8,6 +8,7 @@ import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import ru.dest.industrialhorizons.IndustrialHorizons;
+import ru.dest.industrialhorizons.common.block.Furn;
 import ru.dest.industrialhorizons.common.block.WorkTableBlock;
 
 import java.util.function.Supplier;
@@ -17,6 +18,8 @@ public class IHBlocks {
     private static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, IndustrialHorizons.MOD_ID);
 
     public static final RegistryObject<Block> WORK_TABLE = register("work_table", WorkTableBlock::new);
+    public static final RegistryObject<Block> FURN = register("furn", Furn::new);
+    public static final RegistryObject<Block> FURN_SUPP = register("furn_supp", Furn::new);
 
     private static <T extends Block> RegistryObject<T> register(String name, Supplier<T> block){
         RegistryObject<T> toReturn = BLOCKS.register(name, block);

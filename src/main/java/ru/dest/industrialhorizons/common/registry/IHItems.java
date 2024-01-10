@@ -7,6 +7,7 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import ru.dest.industrialhorizons.IndustrialHorizons;
 import ru.dest.industrialhorizons.common.item.DamageAbleItem;
+import ru.dest.industrialhorizons.common.item.Hammer;
 import ru.dest.industrialhorizons.common.item.SimpleItem;
 
 
@@ -46,6 +47,25 @@ public class IHItems {
     public static final RegistryObject<Item> ASSEMBLED_CIRCUIT_BOARD_T3 = ITEMS.register("assembled_circuit_board_t3", () -> new SimpleItem(64));
     public static final RegistryObject<Item> ASSEMBLED_CIRCUIT_BOARD_T4 = ITEMS.register("assembled_circuit_board_t4", () -> new SimpleItem(64));
     public static final RegistryObject<Item> ASSEMBLED_CIRCUIT_BOARD_T5 = ITEMS.register("assembled_circuit_board_t5", () -> new SimpleItem(64));
+
+    public static final RegistryObject<Item> INGOT_ALUMINIUM = ITEMS.register("ingot_aluminium", ()-> new SimpleItem(64));
+    public static final RegistryObject<Item> INGOT_CHROME = ITEMS.register("ingot_chrome", ()-> new SimpleItem(64));
+    public static final RegistryObject<Item> INGOT_COPPER = ITEMS.register("ingot_copper", ()-> new SimpleItem(64));
+    public static final RegistryObject<Item> INGOT_ETHERIUM = ITEMS.register("ingot_etherium", ()-> new SimpleItem(64));
+    public static final RegistryObject<Item> INGOT_LEAD = ITEMS.register("ingot_lead", ()-> new SimpleItem(64));
+    public static final RegistryObject<Item> INGOT_MANGANESE = ITEMS.register("ingot_manganese", ()-> new SimpleItem(64));
+    public static final RegistryObject<Item> INGOT_NICKEL = ITEMS.register("ingot_nickel", ()-> new SimpleItem(64));
+    public static final RegistryObject<Item> INGOT_SELEN = ITEMS.register("ingot_selen", ()-> new SimpleItem(64));
+    public static final RegistryObject<Item> INGOT_SILVER = ITEMS.register("ingot_silver", ()-> new SimpleItem(64));
+    public static final RegistryObject<Item> INGOT_TIN = ITEMS.register("ingot_tin", ()-> new SimpleItem(64));
+    public static final RegistryObject<Item> INGOT_TITAN = ITEMS.register("ingot_titan", ()-> new SimpleItem(64));
+    public static final RegistryObject<Item> INGOT_TUNGSTEN = ITEMS.register("ingot_tungsten", ()-> new SimpleItem(64));
+    public static final RegistryObject<Item> INGOT_VANADIUM = ITEMS.register("ingot_vanadium", ()-> new SimpleItem(64));
+    public static final RegistryObject<Item> INGOT_ZINC = ITEMS.register("ingot_zinc", ()-> new SimpleItem(64));
+
+    public static final RegistryObject<Item> HAMMER = ITEMS.register("hammer", () -> new Hammer(new Item.Properties()));
+
+    public static final RegistryObject<Item> SULFUR = ITEMS.register("sulfur", ()-> new SimpleItem(64));
 
     public static void init(IEventBus eventBus){
         ITEMS.register(eventBus);
